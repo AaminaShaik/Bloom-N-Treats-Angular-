@@ -1,0 +1,108 @@
+<!-- <div class="container">
+    <div class="grid-container">
+      
+        <div class="card" *ngFor="let prod of productList">
+            <img class="card-img-top" [src]="prod.productImageUrl" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ prod.productName }}</h5>
+                <p class="card-text">{{ prod.productPrice }}</p>
+                <p class="card-text">{{ prod.categoryName }}</p>
+               
+                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary">
+                <i class="fa fa-shopping-bag me-2 text-primary"></i>Add to Cart</a>
+               
+            </div>
+        
+    </div>
+    </div>
+</div> -->
+<!-- <app-home></app-home> -->
+<!-- <div class="container">
+    <div class="grid-container">
+      
+        <div class="card" *ngFor="let prod of productList">
+            <img class="card-img-top" [src]="prod.productImageUrl" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{ prod.productName }}</h5>
+                <p class="card-text">{{ prod.productPrice }}</p>
+                <p class="card-text">{{ prod.categoryName }}</p>
+                <p class="card-text">{{ prod.productDescription }}</p> 
+                <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i>Add to Cart</a>
+            </div>
+        
+    </div>
+    </div>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Card</title>
+<style>
+  /* Basic styles */
+  .card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    margin: 20px;
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .card h3 {
+    margin-top: 10px;
+  }
+
+  .card p {
+    color: #666;
+    font-size:23px;
+  }
+
+  /* Add to cart button styles */
+  .add-to-cart {
+    background-color: white;
+    color: black;
+   border-color: 2px solid black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+
+  .add-to-cart:hover {
+    background-color: skyblue;
+  }
+</style>
+</head>
+<body>
+  <h1 allign="center"><b>Indoor Plants</b></h1>
+<div class="grid-container">
+<div class="card" *ngFor="let prod of productList">
+    <img class="card-img-top" [src]="prod.productImageUrl" alt="Card image cap">
+  <h3>{{prod.productName}}</h3>
+  <p>{{prod.productPrice |currency:'INR'}}</p>
+  <!-- <p>{{prod.productDescription}}</p> -->
+  <button class="add-to-cart"(click)="addToCart(prod)">Add to Cart</button>
+</div>
+</div>
+</body>
+</html>

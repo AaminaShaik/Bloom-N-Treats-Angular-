@@ -1,0 +1,114 @@
+<nav class="navbar navbar-expand-lg bg-body-green" style="height: 80px;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="assets\images\logo1.png" style="height: 105px;width: 105px;padding-bottom:50px ;"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="list-style-type: none;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <!-- <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="home">Category</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" style="color: white;" routerLink="/header/my-account">My Account</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/header/contactUs">Contact Us</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/header/about">About</a>
+        </li> -->
+      </ul>
+      <form class="d-flex" role="search">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="list-style-type: none;">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/header/cart">Cart</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="review">Feedback</a>
+          </li> -->
+          <li class="nav-item" *ngIf="!service.setUserLoggedIn()">
+            <a class="nav-link" routerLink="login">Login</a>
+          </li>
+          <ng-template *ngIf="service.setUserLoggedIn()">
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" routerLink="/header/login">LogOut</a>
+            </li>
+          </ng-template>
+        </ul>
+      </form>
+    </div>
+  </div>
+</nav>
+<div style="font-size: 12px">
+<nav id="nav1"  class="navbar navbar-expand-lg bg-body-tertiary" style="height: 80px;">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="list-style-type: none;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/anniversary" style="padding-left:70px;">ANNIVERSARY</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/birthday" style="padding-left:40px;">BIRTHDAY</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/bestOfCakes" style="padding-left:40px;">BEST OF CAKES</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/bestOfFlowers" style="padding-left:40px;">BEST OF FLOWERS</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/unique" style="padding-left:40px;">UNIQUE GIFT</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/giftHamper">GIFT HAMPERS</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/chocolates" style="padding-left:40px;">CHOCOLATES</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/header/indoorPlants" style="padding-left:40px;">INDOOR PLANTS</a>
+        </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+       
+      </ul>
+      <!-- <form class="d-flex" role="search">
+       
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="list-style-type: none;">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cart">Cart</a>
+          </li>
+          <li class="nav-item" *ngIf="!service.setUserLoggedIn()">
+            <a class="nav-link" routerLink="/header/login">Login</a>
+          </li>
+          <ng-template *ngIf="service.setUserLoggedIn()">
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" routerLink="/header/login">LogOut</a>
+            </li>
+          </ng-template>
+        </ul>
+      </form> -->
+      
+    </div>
+  </div>
+</nav>
+</div>
+<router-outlet></router-outlet>
+<!-- <app-home></app-home> -->
+<!-- <div>
+  <app-find-gift></app-find-gift><br><br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  </div>
+<app-about></app-about> -->
+<br/>
+  <br/>
+
+<app-footer></app-footer>
