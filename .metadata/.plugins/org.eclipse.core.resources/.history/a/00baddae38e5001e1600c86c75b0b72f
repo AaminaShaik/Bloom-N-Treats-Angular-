@@ -1,0 +1,21 @@
+package com.ts;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.dao.ReviewDAO;
+import com.dao.ReviewRepo;
+import com.modal.Product;
+import com.modal.Review;
+@Controller
+public class ReviewController {
+
+	@Autowired 
+	ReviewDAO revDAO;
+	@PostMapping("reviews")
+	public void addreviews(@RequestBody Review review){
+		revDAO.addReview(review);
+	}
+}

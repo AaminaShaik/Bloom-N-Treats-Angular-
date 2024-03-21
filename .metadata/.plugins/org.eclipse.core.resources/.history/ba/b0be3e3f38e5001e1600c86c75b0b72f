@@ -1,0 +1,24 @@
+package com.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.modal.Product;
+import com.modal.Review;
+@Service
+public class ReviewDAO {
+ 
+	@Autowired
+	ReviewRepo revRepo;
+	
+	public void addReview(Review review) {
+		revRepo.save(review);	
+	}
+	public List<Review> getAllProducts(Review review) {
+		// TODO Auto-generated method stub
+		return revRepo.findAll();
+	}
+
+}

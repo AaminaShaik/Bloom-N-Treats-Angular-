@@ -1,0 +1,51 @@
+package com.ts;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.dao.CustomerDao;
+import com.dao.CustomerRepo;
+import com.modal.Customer;
+ @CrossOrigin(origins="http://localhost:4200")
+@RestController
+public class CustomerController {
+	@Autowired
+	private CustomerDao custdao;
+	
+	@PostMapping("register")
+	public void register(@RequestBody Customer customer){
+		System.out.println("Data recived : ");
+		custdao.register(customer);
+	}
+	@RequestMapping("loginCustomer/{userName}/{password}")
+	public Customer loginCustomer(@PathVariable("userName")String userName,@PathVariable("password")String password){
+		return custdao.findByUsernamePassword(userName,password);
+	}
+	@RequestMapping("getAllCustomers")
+	public List<Customer> showAllCustomer(){	
+	return custdao.getAllCustomer();
+	}
+	@RequestMapping("showEmployeeById/{id}")
+	public Customer showCustomerById(@PathVariable("id") int id){
+				return custdao.getCustomerById(id);
+	}
+	@PutMapping("updateCustomer")
+	public Customer updateCustomer(@RequestBody Customer customer) {
+		return custdao.updateCustomer(customer);
+	}
+	@DeleteMapping("deleteEmployeeById/{id}")
+	public void deleteCustomerById(@PathVariable("id")int id){
+		custdao.deleteCustomerById(id);
+	}
+	
+
+}

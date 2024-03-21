@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.modal.RegisterCustomer&apos; to &apos;Register&apos;&#x0D;&#x0A;- Original project: &apos;cakeProject&apos;&#x0D;&#x0A;- Original element: &apos;com.modal.RegisterCustomer&apos;&#x0D;&#x0A;- Renamed element: &apos;com.modal.Register&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RegisterCustomer&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.modal{RegisterCustomer.java[RegisterCustomer" matchStrategy="1" name="Register" qualified="false" references="true" similarDeclarations="false" stamp="1709797998698" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,45 @@
+package com.modal;
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Review {
+	@Id @GeneratedValue
+	private int id;
+	private String review;
+	private int rating;
+	public Review() {}
+	public Review(int id, String review, int rating) {
+		super();
+		this.id = id;
+		this.review = review;
+		this.rating = rating;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getReview() {
+		return review;
+	}
+	public void setReview(String review) {
+		this.review = review;
+	}
+	public int getRating() {
+		return rating;
+	}
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+	@Override
+	public String toString() {
+		return "Review [id=" + id + ", review=" + review + ", rating=" + rating + "]";
+	}
+	
+	
+}

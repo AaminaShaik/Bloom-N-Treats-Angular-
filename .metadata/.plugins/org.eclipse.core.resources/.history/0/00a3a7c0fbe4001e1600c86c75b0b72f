@@ -1,0 +1,57 @@
+
+package com.modal;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+public class Category {
+
+	 @Id@GeneratedValue
+     private int category_id;
+     private String categoryName;
+     @OneToMany(mappedBy = "category")
+     @JsonIgnore
+     private List<Product> prodList = new ArrayList<>();
+	public Category() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Category(int category_id, String categoryName) {
+		super();
+		this.category_id = category_id;
+		this.categoryName = categoryName;
+	}
+	
+	public List<Product> getProdList() {
+		return prodList;
+	}
+	public void setProdList(List<Product> prodList) {
+		this.prodList = prodList;
+	}
+	public int getCategoryId() {
+		return category_id;
+	}
+	public void setCategoryId(int categoryId) {
+		this.category_id = categoryId;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	@Override
+	public String toString() {
+		return "Category [categoryId=" + category_id + ", categoryName=" + categoryName + ", prodList=" + prodList + "]";
+	}
+     
+     
+}

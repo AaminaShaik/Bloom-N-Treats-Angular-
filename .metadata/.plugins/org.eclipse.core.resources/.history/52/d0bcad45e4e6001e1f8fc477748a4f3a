@@ -1,0 +1,29 @@
+package com.ts;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.dao.OrdersDao;
+import com.dao.ReviewDAO;
+import com.modal.Orders;
+import com.modal.Review;
+
+@RestController
+public class OrdersController {
+
+	@Autowired 
+	OrdersDao orderdao;
+	@PostMapping("addOrders")
+	public void addOrders(@RequestBody Orders order){
+		orderdao.addOrder(order);
+	}
+	@GetMapping("getAllOrderss")
+	public List<Orders> getAllOrders( Orders order){
+		return orderdao .getOrders(order);
+	}
+}
